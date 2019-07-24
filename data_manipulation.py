@@ -141,7 +141,7 @@ ax.yaxis.grid(True)
 
 # Save the figure and show
 plt.tight_layout()
-plt.savefig('plots/bar_plot_mean_systollic velcities.png')
+plt.savefig('plots/bar_plot_mean_systollic velocities.png')
 plt.show()
 
 #%%
