@@ -72,7 +72,6 @@
 #
 # McNutt 2014 <https://science.sciencemag.org/content/343/6168/229>
 
-
 #%%
 # Import Modules
 
@@ -204,6 +203,20 @@ plt.show()
 
 #%% [markdown]
 ### Ratios
+
+#%% [markdown]
+
+# |  	| ICApsv 	| ICApsv:CCApsv 	| ICApsv:CCAedv 	|
+# |-----------------	|-----------------	|----------------------------------------------------------------------------------	|---------------	|
+# | Normal 	| <124 cm/s 	| <2 	| <8 	|
+# | Mild Atheroma 	| <124 cm/s 	| <2 	| <8 	|
+# | <50% stenosis 	| <124 cm/s 	| <2 	| <8 	|
+# | 50-69% stenosis 	| 125 to 229 cm/s 	| 2-4 	| 8-13 	|
+# | 70-89% stenosis 	| 230 to 399 cm/s 	| >4 	| 14-35 	|
+# | >90% stenosis 	| >400 cm/s 	| >5 	| >35 	|
+# | Trickle flow 	|  	| Threadlike flow visible, either >> 400 cm/s or
+# | |   | severely damped low velocity flow 	|  	|
+# | Occluded 	|  	| No Flow 	|  	|
 
 #%%
 # ICApsv:CCApsv Ratios
