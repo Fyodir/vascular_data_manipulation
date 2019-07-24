@@ -141,7 +141,7 @@ ax.yaxis.grid(True)
 
 # Save the figure and show
 plt.tight_layout()
-plt.savefig('plots/bar_plot_with_error_bars.png')
+plt.savefig('plots/bar_plot_mean_systollic velcities.png')
 plt.show()
 
 #%%
@@ -293,6 +293,38 @@ ax.set_title('ICApsv:CCApsv Ratio Vs ICApsv:CCAedv Ratio w/ corresponding "norma
 
 plt.legend(loc='best')
 plt.savefig('plots/comparison_ICApsv:CCApsv_and_ ICApsv_CCAedv_Ratios.png')
+plt.show()
+
+#%%
+# Calculate mean and std deviation for ratios
+
+mean_ICApsv_CCApsv_ratio = np.mean(ICApsv_CCApsv_ratios)
+mean_ICApsv_CCAedv_ratio = np.mean(ICApsv_CCAedv_ratios)
+
+stdev_ICApsv_CCApsv_ratio = np.std(ICApsv_CCApsv_ratios)
+stdev_ICApsv_CCAedv_ratio = np.std(ICApsv_CCAedv_ratios)
+
+#%%
+# Bar plot - Mean ratios w/ std deviation
+
+ratio = ['ICApsv_CCApsv_ratio', 'ICApsv_CCAedv_ratio']
+x_pos = np.arange(len(ratio))
+CTEs = [mean_ICApsv_CCApsv_ratio, mean_ICApsv_CCAedv_ratio]
+error = [stdev_ICApsv_CCApsv_ratio, stdev_ICApsv_CCAedv_ratio]
+
+#Building the Bar plot
+
+fig, ax = plt.subplots()
+ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, color="cyan", ecolor='orangered', capsize=10)
+ax.set_ylabel('Ratio')
+ax.set_xticks(x_pos)
+ax.set_xticklabels(ratio)
+ax.set_title('Average ratios')
+ax.yaxis.grid(True)
+
+# Save the figure and show
+plt.tight_layout()
+plt.savefig('plots/bar_plot_average_ratios.png')
 plt.show()
 
 #%%
