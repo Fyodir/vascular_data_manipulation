@@ -1,4 +1,8 @@
-# Competencies
+# Vascular Placement - Andrew Smith
+
+## SBI102 Information and Communications Technology in the Clinical Environment
+
+## Competencies
 
 Analyse data and report on the use of specific measurements (particularly in terms of accuracy, reproducibility, bias, specificity and sensitivity) in the context of bioinformatics.
 
@@ -11,6 +15,12 @@ Analyse data and report on the use of specific measurements (particularly in ter
 - Use of commonly available databases, spreadsheets and statistics packages.
 - Concept of Patient Identifiable Data and the process of de-identification for both teaching and research purposes.
 - Governance and ethical issues surrounding such secondary use of data.
+
+### Author
+
+Andrew Smith (July 2019)
+
+---
 
 ## Importance of Reproducibility
 
@@ -28,11 +38,11 @@ A safe and painless procedure, Carotid Artery (CA) ultrasound is the utilisation
   - Inferior to the ICA and CCA
 - Internal Carotid Artery (ICA)
   - Provides blood flow to the brain
-  - Does not branch
+  - Does not branch (until reaching the brain)
   - Minimal resistance - Brain requires constant blood flow and suply of oxygen
 - External Carotid Artery (ECA)
-  - supplies blood flow to the face
-  - consists of many brancheses to various parts of the face
+  - Supplies blood flow to the face
+  - Consists of many brancheses leading towards various parts of the face
   - Greater resistance than ICA - facial regions do not require constant supply of oxygen, intermittent flow is substantial
 
 High-frequency sound waves travel from the probe through gel into the region of interest. The probe collects the sound waves that bounce back . THese soundwaves are processed by a computer to create an image. Unlike other imageing modalities such as Omputed Tomography (CT) and Positron Emission Tomography (PET), ultrasound exams do not use radiation. Images are also captured in real-time,  can show the structure and movement of the body's internal organs, and,in the case of vascular studies can also show blood flowing through blood vessels.
@@ -90,17 +100,37 @@ Firstly mean average of each of the 4 varying types of measurements obtained was
 For visual representation these awere also plotted onto serperate scatter graphs, one for the CCA and another for the CCA. These two scatter graphs show each easurement in turn, mean average (dash line), and ±1 standard deviation (dotted lines).
 
 ![alt text](plots/scatter_plot_CCA_velocities.png)
+
 ![alt text](plots/scatter_plot_ICA_velociteis.png)
 
 #### Ratio's
 
-THe next port of call was the calculation annd assessment of velocity ratio's.
+The next port of call was the calculation and assessment of reproducibility of velocity ratio's.
 
-Once calcualted these are visualised in th following plot (with accompanying threshold for a normal value)
+|  	                | ICApsv 	    | Ratio - ICApsv:CCApsv 	        | Ratio - ICApsv:CCAedv 	|
+|-----------------|-----------------|-----------------------------------|---------------------------|
+| Normal 	      | <124 cm/s 	    | <2 	                            | <8 	                    |
+| Mild Atheroma   | <124 cm/s 	    | <2 	                            | <8 	                    |
+| <50% stenosis   | <124 cm/s 	    | <2 	                            | <8 	                    |
+| 50-69% stenosis | 125 to 229 cm/s | 2-4 	                            | 8-13 	                    |
+| 70-89% stenosis | 230 to 399 cm/s | >4 	                            | 14-35                     |
+| >90% stenosis   | >400 cm/s 	    | >5 	                            | >35 	                    |
+| Trickle flow    |  	            | Threadlike flow visible, either   |                           |
+|                 |                 | >> 400 cm/s or severely           |                           |
+|                 |                 | damped low velocity flow          |                           |
+| Occluded 	      |  	            | No Flow 	                        |     	                    |
+
+The two plots below displays calculated Ratios with margins for error
+
+![alt text](plots/ICApsv:CCApsv_Ratio.png)
+
+![alt text](plots/ICApsv:CCAedv_Ratio.png)
+
+These can be further visualised in the following plot (with accompanying threshold for a normal value)
 
 ![alt text](plots/comparison_ICApsv:CCApsv_and_&#32;ICApsv_CCAedv_Ratios.png)
 
-Average ratios and corresponding margin of error can be seen below
+Average ICApsv:CCApsv and ICApsv:CCAedv ratios along with  margins of error can also be seen below
 
 ![alt text](plots/bar_plot_average_ratios.png)
 
@@ -110,8 +140,6 @@ Average ratios and corresponding margin of error can be seen below
 
 Freedman et al (2015) <https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002165>
 
-Begley et al 2015 <https://www.ahajournals.org/doi/full/10.1161/CIRCRESAHA.114.303819>
+Begley et al (2015) <https://www.ahajournals.org/doi/full/10.1161/CIRCRESAHA.114.303819>
 
-McNutt 2014 <https://science.sciencemag.org/content/343/6168/229>
-
-
+McNutt (2014) <https://science.sciencemag.org/content/343/6168/229>
