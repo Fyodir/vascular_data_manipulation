@@ -58,7 +58,7 @@ error = [stdev_rcca_psv, stdev_rcca_edv, stdev_rica_psv, stdev_rica_edv]
 #Building Bar plot - Average Velocities
 
 fig, ax = plt.subplots()
-ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, color="cyan", ecolor='red', capsize=10)
+ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, color="green", ecolor='red', capsize=10)
 ax.set_ylabel('Velocity (cm/s)')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(scans)
@@ -78,10 +78,10 @@ x_pos = np.arange(len(rcca_psv))
 
 fig, ax = plt.subplots()
 
-ax.scatter(x_pos, rcca_psv, c="cyan", label="RCCA psv")
-ax.hlines(mean_rcca_psv, -0.2, len(x_pos) -0.8, colors="cyan", linestyles="dashed")
-ax.hlines(mean_rcca_psv + stdev_rcca_psv, -0.2, len(x_pos) -0.8, colors="cyan", linestyles="dotted")
-ax.hlines(mean_rcca_psv - stdev_rcca_psv, -0.2, len(x_pos) -0.8, colors="cyan", linestyles="dotted")
+ax.scatter(x_pos, rcca_psv, c="steelblue", label="RCCA psv")
+ax.hlines(mean_rcca_psv, -0.2, len(x_pos) -0.8, colors="steelblue", linestyles="dashed")
+ax.hlines(mean_rcca_psv + stdev_rcca_psv, -0.2, len(x_pos) -0.8, colors="steelblue", linestyles="dotted")
+ax.hlines(mean_rcca_psv - stdev_rcca_psv, -0.2, len(x_pos) -0.8, colors="steelblue", linestyles="dotted")
 
 ax.scatter(x_pos, rcca_edv, c="y", label="RCCA edv")
 ax.hlines(mean_rcca_edv, -0.2, len(x_pos) -0.8, colors="y", linestyles="dashed")
@@ -110,10 +110,10 @@ ax.hlines(mean_rica_psv, -0.2, len(x_pos) -0.8, colors="m", linestyles="dashed")
 ax.hlines(mean_rica_psv + stdev_rica_psv, -0.2, len(x_pos) -0.8, colors="m", linestyles="dotted")
 ax.hlines(mean_rica_psv - stdev_rica_psv, -0.2, len(x_pos) -0.8, colors="m", linestyles="dotted")
 
-ax.scatter(x_pos, rica_edv, c="lime", label="RICA edv")
-ax.hlines(mean_rica_edv, -0.2, len(x_pos) -0.8, colors="lime", linestyles="dashed")
-ax.hlines(mean_rica_edv + stdev_rica_edv, -0.2, len(x_pos) -0.8, colors="lime", linestyles="dotted")
-ax.hlines(mean_rica_edv - stdev_rica_edv, -0.2, len(x_pos) -0.8, colors="lime", linestyles="dotted")
+ax.scatter(x_pos, rica_edv, c="mediumseagreen", label="RICA edv")
+ax.hlines(mean_rica_edv, -0.2, len(x_pos) -0.8, colors="mediumseagreen", linestyles="dashed")
+ax.hlines(mean_rica_edv + stdev_rica_edv, -0.2, len(x_pos) -0.8, colors="mediumseagreen", linestyles="dotted")
+ax.hlines(mean_rica_edv - stdev_rica_edv, -0.2, len(x_pos) -0.8, colors="mediumseagreen", linestyles="dotted")
 
 ax.set_ylim(ymin=0, ymax=100)
 ax.set_ylabel('Velocity (cm/s)')
@@ -132,19 +132,21 @@ plt.show()
 
 #%% [markdown]
 
-# |  	| ICApsv 	| Ratio - ICApsv:CCApsv 	| Ratio - ICApsv:CCAedv 	|
-# |-----------------	|-----------------	|----------------------------------------------------------------------------------	|---------------	|
-# | Normal 	| <124 cm/s 	| <2 	| <8 	|
-# | Mild Atheroma 	| <124 cm/s 	| <2 	| <8 	|
-# | <50% stenosis 	| <124 cm/s 	| <2 	| <8 	|
-# | 50-69% stenosis 	| 125 to 229 cm/s 	| 2-4 	| 8-13 	|
-# | 70-89% stenosis 	| 230 to 399 cm/s 	| >4 	| 14-35 	|
-# | >90% stenosis 	| >400 cm/s 	| >5 	| >35 	|
-# | Trickle flow 	|  	| Threadlike flow visible, either >> 400 cm/s or
-# | |   | severely damped low velocity flow 	|  	|
-# | Occluded 	|  	| No Flow 	|  	|
+# |  	            | ICApsv 	        | Ratio - ICApsv:CCApsv 	| Ratio - ICApsv:CCAedv 	|
+# |-----------------|-----------------	|--------------------------	|---------------------------|
+# | Normal 	        | <124 cm/s 	    | <2 	                            | <8 	|
+# | Mild Atheroma 	| <124 cm/s 	    | <2 	                            | <8 	|
+# | <50% stenosis 	| <124 cm/s 	    | <2 	                            | <8 	|
+# | 50-69% stenosis | 125 to 229 cm/s 	| 2-4 	                            | 8-13 	|
+# | 70-89% stenosis | 230 to 399 cm/s 	| >4 	                            | 14-35 |
+# | >90% stenosis 	| >400 cm/s 	    | >5 	                            | >35 	|
+# | Trickle flow 	|  	                | Threadlike flow visible, either   |       |
+# |                 |                   | >> 400 cm/s or severely           |       |
+# |                 |                   | damped low velocity flow          |       |
+# | Occluded 	    |  	                | No Flow 	                        |     	|
 
 #%%
+
 # ICApsv:CCApsv Ratios
 ICApsv_CCApsv_ratios = []
 
