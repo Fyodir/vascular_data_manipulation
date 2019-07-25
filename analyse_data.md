@@ -37,11 +37,28 @@ A safe and painless procedure, Carotid Artery (CA) ultrasound is the utilisation
 
 High-frequency sound waves travel from the probe through gel into the region of interest. The probe collects the sound waves that bounce back . THese soundwaves are processed by a computer to create an image. Unlike other imageing modalities such as Omputed Tomography (CT) and Positron Emission Tomography (PET), ultrasound exams do not use radiation. Images are also captured in real-time,  can show the structure and movement of the body's internal organs, and,in the case of vascular studies can also show blood flowing through blood vessels.
 
+### Common Artefacts in Ultrasound performance
+
+Often occur due to various occurences, such includes:
+
+- Operator Error
+- Physical Principles
+- Equipment Malfunction/Design
+
+The wave transmitted travels in a direct line from the probe(transducer) to an obect, then is reflected back to the probe(transducer). A signal is created depending upon the distance in which the wave was required to travel to and from the point of reflection. An increase in wavelength of the transmitted wave will result in greater penetrance of the signal, but will adverseley affect resolution.
+
+#### Catagories of Artefacts
+
+- Image detail resolution related
+- Locational artifacts
+- Attenuation artifacts
+- Doppler artifacts
+
 ### Identifiable Data
 
 Data gathered foor this exercises was obtained by undertaking ultrasound scans from the Common and Internal Carotid Arteries. The data gathered from the scans has been anonymised to protect confidentiality of the individual whom they were taken from.
 
-#### Methodology
+### Methodology
 
 Ultrasound scans were taken of the "Right Common Carotid Artery" (RCCA) and "Right Internal Carotid Artery" (RICA). To ensure optimum reproducibility of results, the following factors were kept idencital throughout the process:
 
@@ -62,22 +79,32 @@ The RCCA and RICA were scanned 5 times each, and post systolic (psv) and end dia
   
 This data was used in statistical analysis to assess reproducibility (carried out in `data_manipulation.py`). Numerous visual aids were created regarding mean average, standard deviation concerning the measurements and corresponding ratios **ICApsv:CCApsv** and **ICApsv:CCAedv**.
 
-### Common Artefacts in Ultrasound performance
+### Results
 
-Often occur due to various occurences, such includes:
+#### Average Velocities and Standard Deviation
 
-- Operator Error
-- Physical Principles
-- Equipment Malfunction/Design
+Firstly mean average of each of the 4 varying types of measurements obtained was calculated, along with corresponding margin for error.
 
-The wave transmitted travels in a direct line from the probe(transducer) to an obect, then is reflected back to the probe(transducer). A signal is created depending upon the distance in which the wave was required to travel to and from the point of reflection. An increase in wavelength of the transmitted wave will result in greater penetrance of the signal, but will adverseley affect resolution.
+![alt text](plots/bar_plot_mean_systollic&#32;velocities.png)
 
-#### Catagories of Artefacts
+For visual representation these awere also plotted onto serperate scatter graphs, one for the CCA and another for the CCA. These two scatter graphs show each easurement in turn, mean average (dash line), and ±1 standard deviation (dotted lines).
 
-- Image detail resolution related
-- Locational artifacts
-- Attenuation artifacts
-- Doppler artifacts
+![alt text](plots/scatter_plot_CCA_velocities.png)
+![alt text](plots/scatter_plot_ICA_velociteis.png)
+
+#### Ratio's
+
+THe next port of call was the calculation annd assessment of velocity ratio's.
+
+Once calcualted these are visualised in th following plot (with accompanying threshold for a normal value)
+
+![alt text](plots/comparison_ICApsv:CCApsv_and_&#32;ICApsv_CCAedv_Ratios.png)
+
+Average ratios and corresponding margin of error can be seen below
+
+![alt text](plots/bar_plot_average_ratios.png)
+
+### Discussion
 
 ### References
 
@@ -86,3 +113,5 @@ Freedman et al (2015) <https://journals.plos.org/plosbiology/article?id=10.1371/
 Begley et al 2015 <https://www.ahajournals.org/doi/full/10.1161/CIRCRESAHA.114.303819>
 
 McNutt 2014 <https://science.sciencemag.org/content/343/6168/229>
+
+
