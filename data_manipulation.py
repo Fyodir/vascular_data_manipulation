@@ -1,77 +1,3 @@
-#%% [markdown]
-
-### Competencies
-
-# Analyse data and report on the use of specific measurements (particularly in terms of accuracy, 
-# reproducibility, bias, specificity and sensitivity) in the context of bioinformatics.
-
-### Knowledge and skills you might demonstrate
-# - Sources of appropriate literature relating to the technical, scientific and clinical basis of clinical measurements.
-# - Common artefacts in equipment calibration and performance.
-# - Statistical tests applied to clinical measuring data to measure accuracy, precision, resolution and bias.
-# - Range of statistical tests and the appropriate choice for each situation.
-# - Use of commonly available databases, spreadsheets and statistics packages.
-# - Concept of Patient Identifiable Data and the process of de-identification for both teaching and research purposes.
-# - Governance and ethical issues surrounding such secondary use of data.
-
-#%% [markdown]
-
-### Importance of Reproducibility
-
-# Within the clinical environment and the concurrent testing theat follows, the imporance of high levels of reproducibility of 
-# sufficiently accurate, precise and reliable results is of the utomost importance. Before patients are even considered, from 
-# an economical standpoint Freedman et al (2015) links low reproducibility of research with increased delays and cost of development.
-# The advancement of medical research is also reliant on the fact that knowledge gained from research can be reproduced in a robust 
-# and reliable manner. If this is not the case, such research will not provide a firm enough base for which further advances can be 
-# developed upon (Begley et al 2015, McNutt 2014).
-#
-# This perspective on reproducibility gathered from research tranfers smoothly over to the  aspect of clinical care. 
-# If a given test procedure is not reproducibile between individuals it can not then be considered reliable. Unreproducibility of results
-# will  not allow for these measurements to be compared against a "normal" value. As such, clinical measurements taken from an unreprodubilbe test
-# wiill not be substantial to make informed decisions on treatment.
-
-
-### Identifiable Data
-
-# Data gathered foor this exercisesed was obtained by undertaking ultrasound scans from the Common and Internal Carotid Arteries
-# The data gathered from the scans has been anonymised to protect confidentiality of the individual whom they were taken from.
-#
-# To ensure reproducibility of the results, the following factors were kept idencital throughout the process
-# - Same Operator
-# - Same Ultrasound Scanner/Probe
-# - Results were one after another over a space of 15 minutes
-# - Same method of data retrieval was undertaken for each measurement
-# - Same location throughout the procedure
-# - Same Environmental Conditions
-# - Same state of the subject (Resting State)
-
-### Common Artefacts in Ultrasound performance
-
-# Often occur due to various occurences, such includes:
-# - Operator Error
-# - Physical Principles
-# - Equipment Malfunction/Design
-#
-#
-# The wave transmitted travels in a direct line from the probe(transducer) to an obect, then is reflected back to the probe(transducer).
-# A signal is created depending upon the distance in which the wave was required to travel to and from the point of reflection.
-# An increase in wavelength of the transmitted wave will result in greater penetrance of the signal, but will adverseley affect resolution.
-
-#### Catagories of Artefacts
-
-# - Image detail resolution related
-# - Locational artifacts
-# - Attenuation artifacts
-# - Doppler artifacts 
-#
-
-### References
-# Freedman et al (2015) <https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002165>
-#
-# Begley et al 2015 <https://www.ahajournals.org/doi/full/10.1161/CIRCRESAHA.114.303819>
-#
-# McNutt 2014 <https://science.sciencemag.org/content/343/6168/229>
-
 #%%
 # Import Modules
 
@@ -121,7 +47,7 @@ print("RICA PSV: " + str(stdev_rica_psv))
 print("RICA EDV: " + str(stdev_rcca_edv))
 
 #%%
-# Creation of lists for the plot
+# Creation of lists for use in plots
 
 scans = ['RCCApsv', 'RCCAedv', 'RICApsv', 'RICAedv']
 x_pos = np.arange(len(scans))
@@ -129,10 +55,10 @@ CTEs = [mean_rcca_psv, mean_rcca_edv, mean_rica_psv, mean_rica_edv]
 error = [stdev_rcca_psv, stdev_rcca_edv, stdev_rica_psv, stdev_rica_edv]
 
 #%%
-#Building the Bar plot
+#Building Bar plot - Average Velocities
 
 fig, ax = plt.subplots()
-ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, ecolor='red', capsize=10)
+ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, color="cyan", ecolor='red', capsize=10)
 ax.set_ylabel('Velocity (cm/s)')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(scans)
@@ -206,7 +132,7 @@ plt.show()
 
 #%% [markdown]
 
-# |  	| ICApsv 	| ICApsv:CCApsv 	| ICApsv:CCAedv 	|
+# |  	| ICApsv 	| Ratio - ICApsv:CCApsv 	| Ratio - ICApsv:CCAedv 	|
 # |-----------------	|-----------------	|----------------------------------------------------------------------------------	|---------------	|
 # | Normal 	| <124 cm/s 	| <2 	| <8 	|
 # | Mild Atheroma 	| <124 cm/s 	| <2 	| <8 	|
@@ -283,9 +209,9 @@ ax.scatter(x_pos, ICApsv_CCAedv_ratios, c="deepskyblue", label="ICApsv:CCAedv Ra
 ax.set_ylim(ymin=0.4, ymax=10)
 ax.set_ylabel('Ratio')
 ax.hlines(2, 0, 4, color="r", linestyles="dashed")
-ax.text(0, 2.1, "Normal Maximum Threshold")
+ax.text(0, 2.1, "Normal Maximum Threshold - ICApsv:CCApsv")
 ax.hlines(8, 0, 4, color="deepskyblue", linestyles="dashed")
-ax.text(0, 8.1, "Normal Maximum Threshold")
+ax.text(0, 8.1, "Normal Maximum Threshold - ICApsv:CCAedv")
 ax.set_xticks(x_pos)
 ax.set_xlabel('Measurement Attempt')
 ax.set_title('ICApsv:CCApsv Ratio Vs ICApsv:CCAedv Ratio w/ corresponding "normal" thresholds')
@@ -307,7 +233,7 @@ stdev_ICApsv_CCAedv_ratio = np.std(ICApsv_CCAedv_ratios)
 #%%
 # Bar plot - Mean ratios w/ std deviation
 
-ratio = ['ICApsv_CCApsv_ratio', 'ICApsv_CCAedv_ratio']
+ratio = ['ICApsv:CCApsv', 'ICApsv:CCAedv']
 x_pos = np.arange(len(ratio))
 CTEs = [mean_ICApsv_CCApsv_ratio, mean_ICApsv_CCAedv_ratio]
 error = [stdev_ICApsv_CCApsv_ratio, stdev_ICApsv_CCAedv_ratio]
@@ -315,11 +241,11 @@ error = [stdev_ICApsv_CCApsv_ratio, stdev_ICApsv_CCAedv_ratio]
 #Building the Bar plot
 
 fig, ax = plt.subplots()
-ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, color="cyan", ecolor='orangered', capsize=10)
+ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.7, color="dodgerblue", ecolor='orangered', capsize=10)
 ax.set_ylabel('Ratio')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(ratio)
-ax.set_title('Average ratios')
+ax.set_title('Average Carotid Artery Velocity Ratios')
 ax.yaxis.grid(True)
 
 # Save the figure and show
