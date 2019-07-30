@@ -62,7 +62,7 @@ ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.5, color="green", ecolor
 ax.set_ylabel('Velocity (cm/s)')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(scans)
-ax.set_title('Peak Systolic (psv) and End Systolic (esv) Velocity')
+ax.set_title('Figure 1.1 - Peak Systolic (psv) and End Systolic (esv) Velocity')
 ax.yaxis.grid(True)
 
 # Save the figure and show
@@ -92,7 +92,7 @@ ax.set_ylim(ymin=0, ymax=80)
 ax.set_ylabel('Velocity (cm/s)')
 ax.set_xticks(x_pos)
 ax.set_xlabel('Measurement Attempt')
-ax.set_title('Right Common Carotid Artery (CCA) Velocities w/ mean and 1 standard deviation')
+ax.set_title('Figure 1.2 - Right Common Carotid Artery (CCA) Velocities w/ mean and 1 standard deviation')
 # ax.yaxis.grid(True)
 
 plt.legend(loc='best')
@@ -119,7 +119,7 @@ ax.set_ylim(ymin=0, ymax=100)
 ax.set_ylabel('Velocity (cm/s)')
 ax.set_xticks(x_pos)
 ax.set_xlabel('Measurement Attempt')
-ax.set_title('Right Internal Carotid Artery (ICA) Velocities w/ mean and 1 standard deviation')
+ax.set_title('Figure 1.3 - Right Internal Carotid Artery (ICA) Velocities w/ mean and 1 standard deviation')
 # ax.yaxis.grid(True)
 
 
@@ -150,10 +150,39 @@ plt.show()
 # ICApsv:CCApsv Ratios
 ICApsv_CCApsv_ratios = []
 
+
 for i in rica_psv:
-    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[list.index(rica_psv, i)], 2))
+    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[0], 2)),
+    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[1], 2)),
+    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[2], 2)),
+    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[4], 2))
+    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[3], 2)),
+
 
 print("ICApsv:CCApsv Ratios: " + str(ICApsv_CCApsv_ratios))
+
+#%%
+# ICApsv:CCAedv Ratios
+
+ICApsv_CCAedv_ratios = []
+
+for i in rica_psv:
+    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[0], 2)),
+    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[1], 2)),
+    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[2], 2)),
+    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[4], 2))
+    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[3], 2)),
+
+print("ICApsv:CCAedv Ratios: " + str(ICApsv_CCAedv_ratios))
+
+#%%
+# Calculate mean and std deviation for ratios
+
+mean_ICApsv_CCApsv_ratio = np.mean(ICApsv_CCApsv_ratios)
+mean_ICApsv_CCAedv_ratio = np.mean(ICApsv_CCAedv_ratios)
+
+stdev_ICApsv_CCApsv_ratio = np.std(ICApsv_CCApsv_ratios)
+stdev_ICApsv_CCAedv_ratio = np.std(ICApsv_CCAedv_ratios)
 
 #%%
 # Scatter Plot - ICApsv_CCApsv_ratios
@@ -162,26 +191,18 @@ x_pos = np.arange(len(ICApsv_CCApsv_ratios))
 
 fig, ax = plt.subplots()
 ax.scatter(x_pos, ICApsv_CCApsv_ratios, c="r", label="ICApsv:CCApsv Ratio")
+ax.hlines(mean_ICApsv_CCApsv_ratio, -0.2, len(x_pos) -0.8, colors="r", linestyles="dashed")
+ax.hlines(mean_ICApsv_CCApsv_ratio + stdev_ICApsv_CCApsv_ratio, -0.2, len(x_pos) -0.8, colors="r", linestyles="dotted")
+ax.hlines(mean_ICApsv_CCApsv_ratio - stdev_ICApsv_CCApsv_ratio, -0.2, len(x_pos) -0.8, colors="r", linestyles="dotted")
 ax.set_ylim(ymin=0.4, ymax=1.2)
 ax.set_ylabel('Ratio')
 ax.set_xticks(x_pos)
 ax.set_xlabel('Measurement Attempt')
-ax.set_title('ICApsv:CCApsv Ratios')
+ax.set_title('Figure 2.1 - ICApsv:CCApsv Ratios')
 ax.yaxis.grid(True)
 
 plt.savefig('plots/ICApsv:CCApsv_Ratio.png')
 plt.show()
-
-#%%
-# ICApsv:CCAedv Ratios
-
-ICApsv_CCAedv_ratios = []
-
-for i in rica_psv:
-    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[list.index(rica_psv, i)], 2))
-
-print("ICApsv:CCAedv Ratios: " + str(ICApsv_CCAedv_ratios))
-
 
 #%%
 # Scatter Plot - ICApsv_CCAedv_ratios
@@ -190,11 +211,14 @@ x_pos = np.arange(len(ICApsv_CCAedv_ratios))
 
 fig, ax = plt.subplots()
 ax.scatter(x_pos, ICApsv_CCAedv_ratios, c="deepskyblue", label="ICApsv:CCAedv Ratio")
+ax.hlines(mean_ICApsv_CCAedv_ratio, -0.2, len(x_pos) -0.8, colors="deepskyblue", linestyles="dashed")
+ax.hlines(mean_ICApsv_CCAedv_ratio + stdev_ICApsv_CCAedv_ratio, -0.2, len(x_pos) -0.8, colors="deepskyblue", linestyles="dotted")
+ax.hlines(mean_ICApsv_CCAedv_ratio - stdev_ICApsv_CCAedv_ratio, -0.2, len(x_pos) -0.8, colors="deepskyblue", linestyles="dotted")
 ax.set_ylim(ymin=0, ymax=5)
 ax.set_ylabel('Ratio')
 ax.set_xticks(x_pos)
 ax.set_xlabel('Measurement Attempt')
-ax.set_title('ICApsv:CCAedv Ratios')
+ax.set_title('Figure 2.2 - ICApsv:CCAedv Ratios')
 ax.yaxis.grid(True)
 
 plt.savefig('plots/ICApsv:CCAedv_Ratio.png')
@@ -210,27 +234,18 @@ ax.scatter(x_pos, ICApsv_CCApsv_ratios, c="r", label="ICApsv:CCApsv Ratio")
 ax.scatter(x_pos, ICApsv_CCAedv_ratios, c="deepskyblue", label="ICApsv:CCAedv Ratio")
 ax.set_ylim(ymin=0.4, ymax=10)
 ax.set_ylabel('Ratio')
-ax.hlines(2, 0, 4, color="r", linestyles="dashed")
+ax.hlines(2, 0, len(ICApsv_CCApsv_ratios), color="r", linestyles="dashed")
 ax.text(0, 2.1, "Normal Maximum Threshold - ICApsv:CCApsv")
-ax.hlines(8, 0, 4, color="deepskyblue", linestyles="dashed")
+ax.hlines(8, 0, len(ICApsv_CCAedv_ratios), color="deepskyblue", linestyles="dashed")
 ax.text(0, 8.1, "Normal Maximum Threshold - ICApsv:CCAedv")
 ax.set_xticks(x_pos)
 ax.set_xlabel('Measurement Attempt')
-ax.set_title('ICApsv:CCApsv Ratio Vs ICApsv:CCAedv Ratio w/ corresponding "normal" thresholds')
+ax.set_title('Figure 2.3 - ICApsv:CCApsv Ratio Vs ICApsv:CCAedv Ratio w/ corresponding "normal" thresholds')
 # ax.yaxis.grid(True)
 
 plt.legend(loc='best')
 plt.savefig('plots/comparison_ICApsv:CCApsv_and_ ICApsv_CCAedv_Ratios.png')
 plt.show()
-
-#%%
-# Calculate mean and std deviation for ratios
-
-mean_ICApsv_CCApsv_ratio = np.mean(ICApsv_CCApsv_ratios)
-mean_ICApsv_CCAedv_ratio = np.mean(ICApsv_CCAedv_ratios)
-
-stdev_ICApsv_CCApsv_ratio = np.std(ICApsv_CCApsv_ratios)
-stdev_ICApsv_CCAedv_ratio = np.std(ICApsv_CCAedv_ratios)
 
 #%%
 # Bar plot - Mean ratios w/ std deviation
@@ -247,12 +262,17 @@ ax.bar(x_pos, CTEs, yerr=error, align='center', alpha=0.7, color="dodgerblue", e
 ax.set_ylabel('Ratio')
 ax.set_xticks(x_pos)
 ax.set_xticklabels(ratio)
-ax.set_title('Average Carotid Artery Velocity Ratios')
+ax.set_title('Figure 2.4 - Average Carotid Artery Velocity Ratios')
 ax.yaxis.grid(True)
 
 # Save the figure and show
 plt.tight_layout()
 plt.savefig('plots/bar_plot_average_ratios.png')
 plt.show()
+
+#%%
+
+print(stdev_ICApsv_CCAedv_ratio)
+print(stdev_ICApsv_CCApsv_ratio)
 
 #%%
