@@ -107,6 +107,8 @@ For visual representation these awere also plotted onto serperate scatter graphs
 
 The next port of call was the calculation and assessment of reproducibility of velocity ratio's.
 
+**Table 1.1** - Catagorisation of CA Velocities and Ratios
+
 |  	                | ICApsv 	    | Ratio - ICApsv:CCApsv 	        | Ratio - ICApsv:CCAedv 	|
 |-----------------|-----------------|-----------------------------------|---------------------------|
 | Normal 	      | <124 cm/s 	    | <2 	                            | <8 	                    |
@@ -120,7 +122,7 @@ The next port of call was the calculation and assessment of reproducibility of v
 |                 |                 | damped low velocity flow          |                           |
 | Occluded 	      |  	            | No Flow 	                        |     	                    |
 
-The two plots below displays calculated Ratios with margins for error
+The two plots below display calculated Ratios with margins for error
 
 ![alt text](plots/ICApsv:CCApsv_Ratio.png)
 
@@ -135,6 +137,32 @@ Average ICApsv:CCApsv and ICApsv:CCAedv ratios along with  margins of error can 
 ![alt text](plots/bar_plot_average_ratios.png)
 
 ### Discussion
+
+#### Velocities
+
+The results obtained from this project were gathered to determine the accuracy and reproducibility of results gathered by a single individual whislt taking ultrasound scans of the Carotid Artery. As many factors as possible were kept identical during the results gathering process, as mentioned in methodology to minimise the effect of unknown factors on the end results.
+
+One key factor that must be made aware  was that results obtained were not gathered directly by a trained professional, but instead by an operator being guided by such. As such it is likely that the results were more prone to variation and error as a result of unfamiliarity. Results were also tkaen from an individual not currently known to have any medical conditions that may effect them, so only healthy "normal" values were expected (as described in Table 1.1).
+
+Firstly, the average velocies visualised in figures 1.1 - 1.3 correspond with that of a  healthy individual. The average velocites displayed in figure 1.1 even presenting with a room for error no greater than 10cm/s in the RICA (which presented with the largest margin of error) show the results of a healthy individual. Figures 1.2 and 1.3 show more in depth information regarding the precision of these results. As can be seen in these two figures, a considerable portion of the results obtained lie within 1 standard deviation from the mean. This shows a high level of precision. However, those that lie outside of this should be discarded as are liekly due to sources of error with the measurement. These mayhave arisen due to inexperience of the operator, or artefacts with that accumulated with the gathering of the reuslts. It is likely that these may be accounted for if the sample size used for statistical anlysis was extended further, or results gathering was repeated with a more experienced user.
+
+#### Ratios
+
+To further assess the results, ratios used typically used in patient diagnosis (Table 1.1) during routine testing were calso calculated from the dataset.  Each possible ratio was calculated from the dataset and these can be seen in Figures 2.1-2.4.
+
+Figures 2.1 and 2.2, in a similar fashion to that used in 1.2 and 1.3 show how each data value lies in accordance with the mean value and corresponding standard deviations. There is a considerable variation from the mean and values that lie outside of 1 standard deviaiton, which is quite prevalent in figure 2.1. This is likely due to the fact they were calculated from the same dataset used to plot velocites. This as mentioned, already possessed a number of outlying data values, and will have been emphasized during ratio calculations. Figure 2.2 which displays ratios of ICA,psv:CCAedv presents with much greater precision with less values lieing outside of 1 standard deviation, however, this ratio does possess a much larger margin for error in comparison, with a margin of 0.5, compared to 0.07 in figure 2.1 (ICApsv:CCApsv).
+
+Figure 2.3 plots the calulated ratios in figure 2.1 and 2.2 in relation to the maximum threshold for normal "healthy" values. Despite The high level of error in calcualted ratios none show variations in diagnosis, with each displaying ratios that lie within the normal range.
+
+Averages of ratios are plotted in figure 2.4 and show the variation exhibited in both.
+
+### Conclusion
+
+The results obtained from this project emphasize the variation that can occur during the results gathering process, even when many factors remain the same. The dataset shows condiderable variation in results with a number of possibly anomalous values. Accuracy and precision is diplayed in some areas, and the possibility of reprodciple results can be considered with.  However, it is not  possible to comfortably say that these results are likely to be consistantly reproducible without further work.
+
+It is likely that the anomalous values are a result of the inexpereince of the ultrasound operator and may be reduced if repeated by another with more expereince. It must also be considered that the dataset used in analysis only contained 5 sets of values for each region of interest where arterial velocity was measured.
+
+If this study was repeated, it is highly recommended that the same measurements are carried out by multiple operators to allow for comparison, and that the dataset be enlarged proportionally to account for the presence of anomalous results.
 
 ### References
 
