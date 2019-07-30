@@ -95,13 +95,14 @@ This data was used in statistical analysis to assess reproducibility (carried ou
 
 Firstly mean average of each of the 4 varying types of measurements obtained was calculated, along with corresponding margin for error.
 
-![alt text](plots/bar_plot_mean_systollic&#32;velocities.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/bar_plot_mean_systollic&#32;velocities.png "bar_plot_mean_systollic&#32;velocities")
 
 For visual representation these awere also plotted onto serperate scatter graphs, one for the CCA and another for the CCA. These two scatter graphs show each easurement in turn, mean average (dash line), and ±1 standard deviation (dotted lines).
 
-![alt text](plots/scatter_plot_CCA_velocities.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/scatter_plot_CCA_velocities.png "scatter_plot_CCA_velocities.png")
 
-![alt text](plots/scatter_plot_ICA_velociteis.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/scatter_plot_ICA_velociteis.png "scatter_plot_ICA_velociteis.png")
+
 
 #### Ratio's
 
@@ -124,17 +125,17 @@ The next port of call was the calculation and assessment of reproducibility of v
 
 The two plots below display calculated Ratios with margins for error
 
-![alt text](plots/ICApsv:CCApsv_Ratio.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/ICApsv:CCApsv_Ratio.png "ICApsv:CCApsv_Ratio.png")
 
-![alt text](plots/ICApsv:CCAedv_Ratio.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/ICApsv:CCAedv_Ratio.png "ICApsv:CCAedv_Ratio.png")
 
 These can be further visualised in the following plot (with accompanying threshold for a normal value)
 
-![alt text](plots/comparison_ICApsv:CCApsv_and_&#32;ICApsv_CCAedv_Ratios.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/comparison_ICApsv:CCApsv_and_&#32;ICApsv_CCAedv_Ratios.png "comparison_ICApsv:CCApsv_and_&#32;ICApsv_CCAedv_Ratios.png")
 
 Average ICApsv:CCApsv and ICApsv:CCAedv ratios along with  margins of error can also be seen below
 
-![alt text](plots/bar_plot_average_ratios.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/bar_plot_average_ratios.png "/bar_plot_average_ratios.png")
 
 ### Discussion
 
