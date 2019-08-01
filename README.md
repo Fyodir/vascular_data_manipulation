@@ -139,7 +139,7 @@ This data was used in statistical analysis to assess reproducibility (carried ou
 
 Firstly mean average of each of the 4 varying types of measurements obtained was calculated, along with corresponding margin for error.
 
-![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/bar_plot_mean_systollic&#32;velocities.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/bar_plot_mean_systollic_velocities.png)
 
 For visual representation these awere also plotted onto serperate scatter graphs, one for the CCA and another for the CCA. These two scatter graphs show each easurement in turn, mean average (dash line), and ±1 standard deviation (dotted lines).
 
@@ -174,7 +174,7 @@ The two plots below display calculated Ratios with margins for error
 
 These can be further visualised in the following plot (with accompanying threshold for a normal value)
 
-![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/comparison_ICApsv:CCApsv_and_&#32;ICApsv_CCAedv_Ratios.png)
+![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/comparison_ICApsv:CCApsv_and_ICApsv_CCAedv_Ratios.png)
 
 Average ICApsv:CCApsv and ICApsv:CCAedv ratios along with  margins of error can also be seen below
 
