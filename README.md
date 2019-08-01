@@ -64,9 +64,53 @@ The wave transmitted travels in a direct line from the probe(transducer) to an o
 - Attenuation artifacts
 - Doppler artifacts
 
-### Identifiable Data
+### Identifiable Data & Processes for de-identifying medical images or other file-based data
 
 Data gathered foor this exercises was obtained by undertaking ultrasound scans from the Common and Internal Carotid Arteries. The data gathered from the scans has been anonymised to protect confidentiality of the individual whom they were taken from.
+
+None of the images gathered for this project contained patient sensitive data. The images obtained were from an anonymous volunteer and no identifiable data was collected.
+
+If the images had consisted of patient identifiable information and were to be used for purposes other than direct medical care, they would then need to be deidentified. This would be by the process of anonymization or pseudonymization
+
+#### Anonymization
+
+The process of either encrypting or removing personally identifiable information from data sets, so that the people whom the data describe remain anonymou
+
+#### Pseudonymization
+
+The process of replacing most identifying fields within a data record by one or more artificial identifiers, or pseudonym
+
+### Types of processes employed for de-identifying structured clinical data, such as k-anonymity
+
+#### K-anonymity
+
+A property possessed by anonymized data held within tables. It was developed as an attempt to solve the issue of
+
+```“Given person-specific field-structured data, produce a release of the data with scientific guarantees that the individuals who are the subjects of the data cannot be reidentified while the data remain practically useful” (Sweeney 2009)```
+
+Glanularity of data is reduced by the uilisation of two distinct methods. These common methods of achieving k anonymization are the suppression and generalization of data.
+
+Suppression is carried out by replacing some or all aspects of a column of data by asterisks (*). This results in the direct loss of originally identifiable data. Generalization is the method in which data in a table is converted into broader categories. For example, instead of storing the exact ages of patients, this could be instead replaced by age ranges I.e. 21-30, 50<.
+
+#### Fillet(redaction)
+
+The Fillet method is a form of redaction. This effectively is carried out by removing chunks of the original data, but not removing it entirely. For example, if a patient had the name “Barry White” this can then be filleted to create the string of characters “B___y W___e”. In this process the removed characters are typically replaced by hyphens “-” or underscores “_”.  
+
+A disadvantage of this form of deidentification is that data is not completely anonymized as sections of the original data still exist in its original format. This could  be used in the reidentification of the individual. It qwould also require drastically shorter computing time required to deanonymize the data by brute force algorithms.
+
+#### l-diversity
+
+L-diversity  is an extension of the k-anonymity model already discussed.  K-anonymity is suspect to two types of attack:
+
+##### Homogeneity Attack
+
+Risk increases when all values within a set of k-anonymous records are identical. The records may then be exactly predicted, of which only a small subsection of the data will need to be predicted to ascertain the values of the remaining data
+
+##### Background Knowledge Attack
+
+Utilizes attributes of quasi-identifiers  together with sensitive attributes to reduce the amount of possible values for a sensitive attribute. Quasi-identifiers themselves are not unique identifiers. However, when combined with other quasi-identifiers can create  a unique identifier.
+
+In all, L-diversity was created to further k-anonymity by additionally maintaining the diversity of sensitive fields and accounting for the susceptibilities present.
 
 ### Methodology
 
@@ -171,3 +215,5 @@ Freedman et al (2015) <https://journals.plos.org/plosbiology/article?id=10.1371/
 Begley et al (2015) <https://www.ahajournals.org/doi/full/10.1161/CIRCRESAHA.114.303819>
 
 McNutt (2014) <https://science.sciencemag.org/content/343/6168/229>
+
+Sweeney (2009) <http://latanyasweeney.org/work/kanonymity.html>
