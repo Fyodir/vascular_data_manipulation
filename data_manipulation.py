@@ -67,7 +67,7 @@ ax.yaxis.grid(True)
 
 # Save the figure and show
 plt.tight_layout()
-plt.savefig('plots/bar_plot_mean_systollic velocities.png')
+plt.savefig('plots/bar_plot_mean_systollic_velocities.png')
 plt.show()
 
 #%%
@@ -244,7 +244,7 @@ ax.set_title('Figure 2.3 - ICApsv:CCApsv Ratio Vs ICApsv:CCAedv Ratio w/ corresp
 # ax.yaxis.grid(True)
 
 plt.legend(loc='best')
-plt.savefig('plots/comparison_ICApsv:CCApsv_and_ ICApsv_CCAedv_Ratios.png')
+plt.savefig('plots/comparison_ICApsv:CCApsv_and_ICApsv_CCAedv_Ratios.png')
 plt.show()
 
 #%%
