@@ -32,7 +32,7 @@ This perspective on reproducibility gathered from research tranfers smoothly ove
 
 ### What is Carotid Ultrasound?
 
-A safe and painless procedure, Carotid Artery (CA) ultrasound is the utilisation of ultrasonic high frequency sound waves to detect variations in  in structure below the surface of the skin. In the case of CA ultrasound this largeley focuses upon the area surrounding the neckfousing upon three arteries in particular:
+A safe and painless procedure, Carotid Artery (CA) ultrasound is the utilisation of ultrasonic high frequency sound waves to detect variations in  in structure below the surface of the skin. In the case of CA ultrasound this largeley focuses upon the area surrounding the neck. Focusing upon three arteries in particular:
 
 - Common Carotid Artery (CCA)
   - Inferior to the ICA and CCA
