@@ -24,7 +24,7 @@ Andrew Smith (July 2019)
 
 ## Importance of Reproducibility
 
-Within the clinical environment and the concurrent testing theat follows, the imporance of high levels of reproducibility of sufficiently accurate, precise and reliable results is of the utomost importance. Beforereapeatability patients are even considered, from an economical standpoint Freedman et al (2015) links low reproducibility of research with increased delays and cost of development. The advancement of medical research is also reliant on the fact that knowledge gained from research can be reproduced in a robust and reliable manner. If this is not the case, such research will not provide a firm enough base for which further advances can be developed upon (Begley et al 2015, McNutt 2014).
+Within the clinical environment and the concurrent testing that follows, the imporance of a high level of reproducibility, sufficiently accurate, precise and reliable results is of the utomost importance. From an economical standpoint, before repeatability is even considered, Freedman et al (2015) links low reproducibility of research with increased delays and cost of development. The advancement of medical research is  reliant on the fact that knowledge gained from research can be reproduced in a robust and reliable manner. If this is not the case, such research will not provide a firm enough base for which further advances can be developed upon (Begley et al 2015, McNutt 2014).
 
 This perspective on reproducibility gathered from research tranfers smoothly over to the  aspect of clinical care. If a given test procedure is not reproducibile between individuals it can not then be considered reliable. Unreproducibility of results will  not allow for these measurements to be compared against a "normal" value. As such, clinical measurements taken from an unreprodubilbe test will not be substantial to make informed decisions on treatment.
 
@@ -55,7 +55,7 @@ Often occur due to various occurences, such includes:
 - Physical Principles
 - Equipment Malfunction/Design
 
-The wave transmitted travels in a direct line from the probe(transducer) to an obect, then is reflected back to the probe(transducer). A signal is created depending upon the distance in which the wave was required to travel to and from the point of reflection. An increase in wavelength of the transmitted wave will result in greater penetrance of the signal, but will adverseley affect resolution.
+The wave transmitted travels in a direct line from the probe (transducer) to an obect, then is reflected back to the probe(transducer). A signal is created depending upon the distance in which the wave was required to travel to and from the point of reflection. An increase in wavelength of the transmitted wave will result in greater penetrance of the signal, but will adverseley affect resolution.
 
 #### Catagories of Artefacts
 
