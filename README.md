@@ -39,10 +39,10 @@ A safe and painless procedure, Carotid Artery (CA) ultrasound is the utilisation
 - Internal Carotid Artery (ICA)
   - Provides blood flow to the brain
   - Does not branch (until reaching the brain)
-  - Minimal resistance - Brain requires constant blood flow and suply of oxygen
+  - Minimal resistance - Brain requires constant blood flow and supply of oxygen
 - External Carotid Artery (ECA)
   - Supplies blood flow to the face
-  - Consists of many brancheses leading towards various parts of the face
+  - Consists of many branches leading towards various parts of the face
   - Greater resistance than ICA - facial regions do not require constant supply of oxygen, intermittent flow is substantial
 
 High-frequency sound waves travel from the probe through gel into the region of interest. The probe collects the sound waves that bounce back . THese soundwaves are processed by a computer to create an image. Unlike other imageing modalities such as Omputed Tomography (CT) and Positron Emission Tomography (PET), ultrasound exams do not use radiation. Images are also captured in real-time,  can show the structure and movement of the body's internal organs, and,in the case of vascular studies can also show blood flowing through blood vessels.
