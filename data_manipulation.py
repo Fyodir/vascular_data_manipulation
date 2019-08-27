@@ -148,7 +148,7 @@ plt.show()
 #%%
 
 # ICApsv:CCApsv Ratios
-ICApsv_CCAedv_ratios = [round(rica_psv[list.index(rica_psv, x)]/rcca_edv[list.index(rcca_psv, y)], 2) for x in rica_psv for y in rcca_psv]
+ICApsv_CCApsv_ratios = [round(rica_psv[list.index(rica_psv, x)]/rcca_psv[list.index(rcca_psv, y)], 2) for x in rica_psv for y in rcca_psv]
 
 print("ICApsv:CCApsv Ratios: " + str(ICApsv_CCApsv_ratios))
 
