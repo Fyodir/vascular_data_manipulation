@@ -139,7 +139,7 @@ Firstly mean average of each of the 4 varying types of measurements obtained was
 
 ![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/bar_plot_mean_systollic_velocities.png)
 
-For visual representation these awere also plotted onto serperate scatter graphs, one for the CCA and another for the CCA. These two scatter graphs show each measurement in turn, mean average (dash line), and ±1 standard deviation (dotted lines).
+For visual representation these were also plotted onto serperate scatter graphs, one for the CCA and another for the CCA. These two scatter graphs show each measurement in turn, mean average (dash line), and ±1 standard deviation (dotted lines).
 
 ![alt text](https://github.com/Fyodir/vascular_data_manipulation/blob/master/plots/scatter_plot_CCA_velocities.png)
 
