@@ -148,30 +148,13 @@ plt.show()
 #%%
 
 # ICApsv:CCApsv Ratios
-ICApsv_CCApsv_ratios = []
-
-
-for i in rica_psv:
-    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[0], 2)),
-    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[1], 2)),
-    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[2], 2)),
-    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[4], 2))
-    ICApsv_CCApsv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_psv[3], 2)),
-
+ICApsv_CCAedv_ratios = [round(rica_psv[list.index(rica_psv, x)]/rcca_edv[list.index(rcca_psv, y)], 2) for x in rica_psv for y in rcca_psv]
 
 print("ICApsv:CCApsv Ratios: " + str(ICApsv_CCApsv_ratios))
 
 #%%
 # ICApsv:CCAedv Ratios
-
-ICApsv_CCAedv_ratios = []
-
-for i in rica_psv:
-    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[0], 2)),
-    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[1], 2)),
-    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[2], 2)),
-    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[4], 2))
-    ICApsv_CCAedv_ratios.append(round(rica_psv[list.index(rica_psv, i)]/rcca_edv[3], 2)),
+ICApsv_CCAedv_ratios = [round(rica_psv[list.index(rica_psv, x)]/rcca_edv[list.index(rcca_edv, y)], 2) for x in rica_psv for y in rcca_edv]
 
 print("ICApsv:CCAedv Ratios: " + str(ICApsv_CCAedv_ratios))
 
